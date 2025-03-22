@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wewa Motard - Blog sur les tracasseries routières à Kinshasa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Oswald:wght@400;700&family=Old+Standard+TT:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        vintage: {
+                            paper: '#f5f0e1',
+                            dark: '#503b31',
+                            accent: '#a26744',
+                            light: '#dcc7aa',
+                            muted: '#8c7b6b'
+                        }
+                    },
+                    fontFamily: {
+                        'title': ['"Special Elite"', 'cursive'],
+                        'heading': ['"Oswald"', 'sans-serif'],
+                        'body': ['"Old Standard TT"', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Lien vers la feuille de styles séparée -->
+    <link rel="stylesheet" href="styles_wewa.css">
+</head>
+<body class="dark-transition">
+    <!-- === HEADER === -->
+    <header class="relative py-4 border-b-4 border-double border-vintage-muted">
+        <div class="absolute top-4 right-4 z-20">
+            <button id="darkModeToggle" class="tv-effect px-3 py-1 rounded-md font-title text-sm transition-colors bg-vintage-light text-vintage-dark dark:bg-vintage-dark dark:text-vintage-paper">
+                <span id="modeIcon">☀️</span>
+            </button>
+        </div>
+
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center justify-center text-center mb-2">
+                <div class="flex items-center justify-center mb-3">
+                    <div class="w-12 h-0.5 bg-vintage-accent hidden md:block"></div>
+                    <svg class="w-16 h-16 mx-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" stroke="currentColor">
+                        <circle cx="50" cy="50" r="40" stroke-width="4" />
+                        <path d="M30,60 Q50,30 70,60" stroke-width="4" stroke-linecap="round" />
+                        <circle cx="35" cy="40" r="5" stroke-width="4" />
+                        <circle cx="65" cy="40" r="5" stroke-width="4" />
+                        <path d="M40,70 Q50,80 60,70" stroke-width="4" stroke-linecap="round" />
+                    </svg>
+                    <div class="w-12 h-0.5 bg-vintage-accent hidden md:block"></div>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-title tracking-wider mb-2">Wewa Motard</h1>
+                <p class="font-body italic text-vintage-muted">« La voix des motards kinois depuis 2024 »</p>
+            </div>
+            
+            <nav class="flex flex-wrap justify-center space-x-2 md:space-x-8 text-sm md:text-base font-heading uppercase tracking-wide mt-4">
+                <a href="#accueil" class="nav-link px-2 py-1">Accueil</a>
+                <a href="#articles" class="nav-link px-2 py-1">Articles</a>
+                <a href="#temoignages" class="nav-link px-2 py-1">Témoignages</a>
+                <a href="#discussions" class="nav-link px-2 py-1">Discussions</a>
+                <a href="#contact" class="nav-link px-2 py-1">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- === MAIN CONTENT === -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <section id="accueil" class="mb-16">
+            <div class="vintage-container p-6 md:p-8 rounded-lg">
+                <div class="flex flex-col md:flex-row items-center">
+                    <div class="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                        <h2 class="text-3xl md:text-4xl font-heading mb-4 uppercase tracking-wide">Notre Mission</h2>
+                        <div class="postcard-line mb-6"></div>
+                        <p class="font-body text-lg md:text-xl mb-6">Bienvenue sur <span class="font-bold">Wewa Motard</span>, le blog qui donne une voix aux motards de Kinshasa face aux tracasseries routières.</p>
+                        <p class="font-body mb-6">Notre mission est de <span class="italic underline">documenter</span> et <span class="italic underline">dénoncer</span> les abus des agents de la PCR (Police de Circulation Routière) et du ministère des transports tout en partageant la réalité quotidienne du transport à moto dans notre ville-province.</p>
+                        <div class="flex flex-wrap gap-4">
+                            <button class="vintage-button px-6 py-2 font-heading tracking-wide text-base uppercase">Signaler un abus</button>
+                            <button class="vintage-button px-6 py-2 font-heading tracking-wide text-base uppercase">Partager un témoignage</button>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <div class="polaroid">
+                            <div class="bg-vintage-muted h-64 flex items-center justify-center overflow-hidden">
+                                <svg class="w-full h-full" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                                    <rect width="400" height="300" fill="#8c7b6b" />
+                                    <circle cx="200" cy="150" r="80" fill="#a26744" />
+                                    <path d="M 120 150 Q 200 50 280 150" stroke="#503b31" stroke-width="8" fill="none" />
+                                    <rect x="140" y="180" width="120" height="60" fill="#503b31" />
+                                    <circle cx="160" cy="260" r="20" fill="#333" stroke="#000" stroke-width="4" />
+                                    <circle cx="240" cy="260" r="20" fill="#333" stroke="#000" stroke-width="4" />
+                                    <rect x="120" y="100" width="160" height="30" fill="#dcc7aa" />
+                                    <rect x="160" y="40" width="80" height="60" fill="#dcc7aa" />
+                                </svg>
+                            </div>
+                            <p class="text-center text-vintage-dark font-body italic mt-2">Routes de Kinshasa, 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Articles Section -->
+        <section id="articles" class="mb-16">
+            <div class="flex items-center mb-8">
+                <h2 class="text-3xl font-heading uppercase tracking-wide">Articles Récents</h2>
+                <div class="flex-grow ml-4">
+                    <div class="postcard-line"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <article class="article-card vintage-container p-5 rounded-lg">
+                    <div class="ribbon">NOUVEAU</div>
+                    <div class="mb-3">
+                        <span class="bg-vintage-accent px-2 py-0.5 rounded-sm text-white text-xs font-bold">TÉMOIGNAGE</span>
+                        <span class="text-vintage-muted text-sm font-body ml-2">15 Juin 2024</span>
+                    </div>
+                    <h3 class="text-xl font-heading mb-2">La traversée impossible du boulevard du 30 Juin</h3>
+                    <p class="font-body mb-4">Comment les PCR transforment un trajet de 15 minutes en une épreuve de 2 heures pour les motards...</p>
+                    <button class="vintage-button px-4 py-1 text-sm font-heading uppercase">Lire la suite</button>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="article-card vintage-container p-5 rounded-lg">
+                    <div class="mb-3">
+                        <span class="bg-vintage-accent px-2 py-0.5 rounded-sm text-white text-xs font-bold">ENQUÊTE</span>
+                        <span class="text-vintage-muted text-sm font-body ml-2">10 Juin 2024</span>
+                    </div>
+                    <h3 class="text-xl font-heading mb-2">Taxe ou extorsion? Les tarifs illégaux imposés aux wewa</h3>
+                    <p class="font-body mb-4">Notre enquête révèle les montants exorbitants et non-officiels prélevés aux carrefours stratégiques...</p>
+                    <button class="vintage-button px-4 py-1 text-sm font-heading uppercase">Lire la suite</button>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="article-card vintage-container p-5 rounded-lg">
+                    <div class="mb-3">
+                        <span class="bg-vintage-accent px-2 py-0.5 rounded-sm text-white text-xs font-bold">ANALYSE</span>
+                        <span class="text-vintage-muted text-sm font-body ml-2">5 Juin 2024</span>
+                    </div>
+                    <h3 class="text-xl font-heading mb-2">L'état des routes de Gombe: un parcours du combattant</h3>
+                    <p class="font-body mb-4">Analyse photographique des nids-de-poule et dangers qui attendent les wewa dans le centre-ville...</p>
+                    <button class="vintage-button px-4 py-1 text-sm font-heading uppercase">Lire la suite</button>
+                </article>
+            </div>
+
+            <div class="text-center mt-10">
+                <button class="vintage-button px-6 py-2 font-heading uppercase">Voir tous les articles</button>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="temoignages" class="mb-16">
+            <div class="flex items-center mb-8">
+                <h2 class="text-3xl font-heading uppercase tracking-wide">Témoignages</h2>
+                <div class="flex-grow ml-4">
+                    <div class="postcard-line"></div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="vintage-container p-5 rounded-lg">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 rounded-full bg-vintage-accent flex items-center justify-center text-white font-bold text-2xl flex-shrink-0">
+                            JK
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="font-heading text-lg">Jean Kasongo</h3>
+                            <p class="text-vintage-muted font-body text-sm">Motard depuis 7 ans</p>
+                        </div>
+                    </div>
+                    <div class="message-bubble p-4 bg-vintage-light rounded-lg mb-2">
+                        <p class="font-body italic">"Chaque jour, je dois payer au moins 5000 FC en 'frais' non-officiels aux PCR pour pouvoir travailler tranquillement. Sinon, ils trouvent toujours une infraction imaginaire."</p>
+                    </div>
+                    <p class="text-right text-sm text-vintage-muted font-body">Limete, Kinshasa</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="vintage-container p-5 rounded-lg">
+                    <div class="flex items-start mb-4">
+                        <div class="w-16 h-16 rounded-full bg-vintage-accent flex items-center justify-center text-white font-bold text-2xl flex-shrink-0">
+                            PM
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="font-heading text-lg">Patrick Mbuyi</h3>
+                            <p class="text-vintage-muted font-body text-sm">Client régulier</p>
+                        </div>
+                    </div>
+                    <div class="message-bubble p-4 bg-vintage-light rounded-lg mb-2">
+                        <p class="font-body italic">"J'ai vu un PCR confisquer les clés d'un wewa juste parce qu'il avait refusé de lui donner de l'argent. Le pauvre a dû payer 15000 FC pour les récupérer."</p>
+                    </div>
+                    <p class="text-right text-sm text-vintage-muted font-body">Gombe, Kinshasa</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <button class="vintage-button px-6 py-2 font-heading uppercase">Partager mon expérience</button>
+            </div>
+        </section>
+
+        <!-- Discussion Section -->
+        <section id="discussions" class="mb-16">
+            <div class="flex items-center mb-8">
+                <h2 class="text-3xl font-heading uppercase tracking-wide">Discussions</h2>
+                <div class="flex-grow ml-4">
+                    <div class="postcard-line"></div>
+                </div>
+            </div>
+
+            <div class="vintage-container p-6 rounded-lg">
+                <h3 class="text-xl font-heading mb-4">Rejoignez la conversation</h3>
+                <p class="font-body mb-6">Partagez vos expériences, signaler des abus ou proposez des solutions pour améliorer la situation des motards à Kinshasa.</p>
+                
+                <div id="chatContainer" class="mb-6 space-y-4">
+                    <!-- Chat messages will appear here -->
+                    <div class="message-bubble p-4 bg-vintage-light rounded-lg">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-heading">Modérateur</span>
+                            <span class="text-xs text-vintage-muted">14 Juin 2024</span>
+                        </div>
+                        <p class="font-body">Bienvenue dans notre espace de discussion. Partagez vos expériences et respectez nos règles de communauté. Ensemble, nous pouvons faire une différence!</p>
+                    </div>
+                </div>
+
+                <div id="commentForm" class="space-y-4">
+                    <div>
+                        <label for="commentName" class="block font-heading text-sm mb-1">Nom/Pseudo</label>
+                        <input type="text" id="commentName" class="vintage-input w-full px-4 py-2 rounded-md text-base" placeholder="Votre nom ou pseudo">
+                    </div>
+                    <div>
+                        <label for="commentMessage" class="block font-heading text-sm mb-1">Message</label>
+                        <textarea id="commentMessage" rows="4" class="vintage-input w-full px-4 py-2 rounded-md text-base" placeholder="Partagez votre expérience ou votre opinion..."></textarea>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <div id="commentStatus" class="text-sm"></div>
+                        <button id="submitComment" class="vintage-button px-6 py-2 font-heading uppercase">Publier</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mb-8">
+            <div class="flex items-center mb-8">
+                <h2 class="text-3xl font-heading uppercase tracking-wide">Contact</h2>
+                <div class="flex-grow ml-4">
+                    <div class="postcard-line"></div>
+                </div>
+            </div>
+
+            <div class="vintage-container p-6 rounded-lg">
+                <div class="flex flex-col md:flex-row">
+                    <div class="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                        <h3 class="text-xl font-heading mb-4">Nous contacter</h3>
+                        <p class="font-body mb-6">Vous souhaitez signaler un cas grave de tracasserie? Proposer un article ou un témoignage? Contactez-nous!</p>
+                        
+                        <form id="contactForm" class="space-y-4">
+                            <div>
+                                <label for="name" class="block font-heading text-sm mb-1">Nom complet</label>
+                                <input type="text" id="name" class="vintage-input w-full px-4 py-2 rounded-md text-base" placeholder="Votre nom complet">
+                            </div>
+                            <div>
+                                <label for="email" class="block font-heading text-sm mb-1">Email ou téléphone</label>
+                                <input type="text" id="email" class="vintage-input w-full px-4 py-2 rounded-md text-base" placeholder="Comment vous joindre">
+                            </div>
+                            <div>
+                                <label for="message" class="block font-heading text-sm mb-1">Message</label>
+                                <textarea id="message" rows="4" class="vintage-input w-full px-4 py-2 rounded-md text-base" placeholder="Votre message..."></textarea>
+                            </div>
+                            <button type="submit" class="vintage-button px-6 py-2 font-heading uppercase">Envoyer</button>
+                        </form>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <div class="polaroid polaroid-alt h-full flex items-center justify-center">
+                            <div class="text-center p-4">
+                                <h3 class="font-heading text-xl mb-4">Suivez-nous</h3>
+                                <div class="space-y-4 font-body">
+                                    <p><span class="font-bold">📱 WhatsApp:</span> +243 900 000 000</p>
+                                    <p><span class="font-bold">📧 Email:</span> contact@wewamotard.cd</p>
+                                    <p><span class="font-bold">📍 Adresse:</span> Avenue de la Liberté, Kinshasa</p>
+                                    <p class="text-vintage-muted italic text-sm mt-8">Notre équipe vous répondra dans les 24 heures.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- === FOOTER === -->
+    <footer class="border-t-4 border-double border-vintage-muted py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col items-center justify-center text-center">
+                <h2 class="text-3xl font-title mb-4">Wewa Motard</h2>
+                <p class="font-body text-vintage-muted mb-6">« La voix des motards kinois depuis 2024 »</p>
+                <div class="flex space-x-4 mb-8">
+                    <a href="#" class="vintage-button px-4 py-1 text-sm">Facebook</a>
+                    <a href="#" class="vintage-button px-4 py-1 text-sm">WhatsApp</a>
+                    <a href="#" class="vintage-button px-4 py-1 text-sm">YouTube</a>
+                </div>
+                <div class="postcard-line w-32 mb-6"></div>
+                <p class="text-sm font-body text-vintage-muted">&copy; 2024 Wewa Motard - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lien vers le fichier JavaScript séparé -->
+    <script src="wewa_script.js"></script>
+</body>
+</html>
