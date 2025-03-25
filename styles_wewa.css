@@ -345,6 +345,23 @@ img, svg {
     border-color: var(--color-light) transparent;
 }
 
+/* Style pour les articles avec image */
+.article-full-content {
+    animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Pour assurer que l'image n'est pas trop grande sur mobile */
+.article-card img {
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+    
 /* Ligne pointillée décorative style carte postale */
 .postcard-line {
     height: 1px;
