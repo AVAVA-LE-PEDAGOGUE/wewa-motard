@@ -64,13 +64,15 @@ img, svg {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
+/* Adaptation mobile pour la polaroid */
 /* Adaptation pour écrans moyens et grands */
-@media (min-width: 768px) {
-    .article-card {
-        max-width: 400px;
+@media (min-width: 767px) {
+     .polaroid, .polaroid-alt, .article-card {
+         width: 100%;
+         max-width: 350px;
         margin: 0 auto;
     }
 
@@ -227,13 +229,31 @@ img, svg {
     box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
     transform: rotate(-2deg);
 }
+
+/* Correction spécifique pour le texte dans la polaroid en mode sombre */
+.polaroid .contact-info {
+    color: var(--color-dark) !important; /* Forcer la couleur du texte */
+    background: white; /* Fond blanc fixe */
+    padding: 1rem;
+    width: 100%;
+}
+
+/* Forcer les couleurs de texte en mode sombre dans la polaroid */
+.dark .polaroid .contact-info h3,
+.dark .polaroid .contact-info p,
+.dark .polaroid .contact-info span {
+    color: #503b31 !important; /* Utilisation de la couleur sombre originale */
+}
+
+/* Assurer que le texte muted reste visible mais plus léger */
+.dark .polaroid .text-vintage-muted {
+    color: #8c7b6b !important;
+}
+    
 /* Ajustement spécifique pour la polaroid de la section contact */
 .polaroid-alt {
     transform: rotate(3deg);
-    height: auto !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    
 }
 
 /* Effet ruban pour marquer les nouveaux contenus */
