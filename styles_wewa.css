@@ -159,15 +159,23 @@ body {
 }
 
 /* Effet polaroid pour les images */
+
+/* Amélioration de la polaroid sur grand écran */
 .polaroid {
+    max-width: 500px;
+    margin: 0 auto;
     background: white;
     padding: 1rem;
     box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
     transform: rotate(-2deg);
 }
-
+/* Ajustement spécifique pour la polaroid de la section contact */
 .polaroid-alt {
     transform: rotate(3deg);
+    height: auto !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Effet ruban pour marquer les nouveaux contenus */
