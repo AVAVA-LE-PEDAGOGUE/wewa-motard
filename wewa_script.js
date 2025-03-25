@@ -154,4 +154,92 @@ document.addEventListener('DOMContentLoaded', function() {
             alert(`Article "${title}" sera ouvert dans une prochaine version du blog.`);
         });
     });
+    // === GESTION DU FORMULAIRE D'ABONNEMENT ===
+const subscribeForm = document.getElementById('subscribeForm');
+const subscribeStatus = document.getElementById('subscribeStatus');
+
+if (subscribeForm) {
+    subscribeForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('subscribeName').value.trim();
+        const email = document.getElementById('subscribeEmail').value.trim();
+        
+        if (!name || !email) {
+            subscribeStatus.textContent = "Veuillez remplir tous les champs.";
+            subscribeStatus.className = "text-red-500 text-sm";
+            return;
+        }
+        
+        // Simuler l'envoi d'un formulaire
+        const subscribeButton = document.getElementById('subscribeButton');
+        subscribeButton.disabled = true;
+        subscribeButton.textContent = "Traitement...";
+        
+        setTimeout(() => {
+            subscribeForm.innerHTML = `
+                <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded">
+                    <p class="font-body">Merci ${name} ! Votre abonnement a été enregistré avec succès.</p>
+                    <p class="font-body mt-2">Nous vous enverrons nos prochains articles à ${email}.</p>
+                </div>
+            `;
+            
+            // Incrémenter le compteur d'abonnés
+            const subscribersCounter = document.querySelector('.stats-item:first-child .counter-value');
+            const currentCount = parseInt(subscribersCounter.textContent);
+            subscribersCounter.textContent = currentCount + 1;
+            subscribersCounter.classList.add('text-green-600');
+            
+            setTimeout(() => {
+                subscribersCounter.classList.remove('text-green-600');
+            }, 2000);
+            
+        }, 1500);
+    });
+}
+
+// === ANIMATION DES COMPTEURS ===
+// Fonction pour animer les compteurs quand ils deviennent visibles
+function animateCounters() {
+    const counters = document.querySelectorAll('.counter-value');
+    const options = {
+        threshold: 0.7 // 70% visible
+    };
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.getAttribute('data-count'));
+                let count = 0;
+                const duration = 1500; // ms
+                const increment = Math.ceil(target / (duration / 30)); // update every 30ms
+                
+                counter.classList.add('counting');
+                
+                const updateCount = () => {
+                    count += increment;
+                    if (count >= target) {
+                        counter.textContent = target;
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = count;
+                    }
+                };
+                
+                const timer = setInterval(updateCount, 30);
+                observer.unobserve(counter);
+            }
+        });
+    }, options);
+    
+    counters.forEach(counter => {
+        observer.observe(counter);
+    });
+}
+
+// Déclencher l'animation des compteurs au chargement
+document.addEventListener('DOMContentLoaded', function() {
+    animateCounters();
+});
 });
