@@ -242,4 +242,33 @@ function animateCounters() {
 document.addEventListener('DOMContentLoaded', function() {
     animateCounters();
 });
+
+    // === GESTION DES ARTICLES DÉTAILLÉS ===
+document.querySelectorAll('.article-detail-button').forEach(button => {
+    button.addEventListener('click', function() {
+        const articleId = this.getAttribute('data-article-id');
+        const fullContent = document.getElementById(articleId);
+        
+        if (fullContent) {
+            fullContent.classList.toggle('hidden');
+            this.textContent = fullContent.classList.contains('hidden') ? 
+                'Lire l\'article complet' : 'Réduire l\'article';
+        }
+    });
+});
+
+document.querySelectorAll('.close-article').forEach(button => {
+    button.addEventListener('click', function() {
+        const fullContent = this.closest('.article-full-content');
+        const detailButton = document.querySelector(`[data-article-id="${fullContent.id}"]`);
+        
+        if (fullContent) {
+            fullContent.classList.add('hidden');
+            if (detailButton) {
+                detailButton.textContent = 'Lire l\'article complet';
+            }
+        }
+    });
+});
+    
 });
