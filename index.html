@@ -295,6 +295,70 @@
                 </div>
             </div>
         </section>
+
+<!-- Section Abonnement -->
+<section id="abonnement" class="mb-16">
+    <div class="flex items-center mb-8">
+        <h2 class="text-3xl font-heading uppercase tracking-wide">Restez informé</h2>
+        <div class="flex-grow ml-4">
+            <div class="postcard-line"></div>
+        </div>
+    </div>
+
+    <div class="vintage-container p-6 rounded-lg">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="w-full md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                <h3 class="text-xl font-heading mb-4">S'abonner à Wewa Motard</h3>
+                <p class="font-body mb-6">Ne manquez aucun témoignage ou information sur les tracasseries routières. Recevez nos derniers articles directement dans votre boîte mail.</p>
+                
+                <form id="subscribeForm" class="space-y-4">
+                    <div>
+                        <label for="subscribeName" class="block font-heading text-sm mb-1">Nom complet</label>
+                        <input type="text" id="subscribeName" class="vintage-input w-full px-4 py-2 rounded-md text-base" placeholder="Votre nom">
+                    </div>
+                    <div>
+                        <label for="subscribeEmail" class="block font-heading text-sm mb-1">Email</label>
+                        <input type="email" id="subscribeEmail" class="vintage-input w-full px-4 py-2 rounded-md text-base" placeholder="votre-email@exemple.com">
+                    </div>
+                    <div>
+                        <button type="submit" id="subscribeButton" class="vintage-button px-6 py-2 font-heading uppercase w-full md:w-auto">
+                            S'abonner
+                        </button>
+                    </div>
+                    <div id="subscribeStatus" class="text-sm"></div>
+                </form>
+            </div>
+            
+            <div class="w-full md:w-1/2 flex justify-center">
+                <div class="stats-container p-6 border-4 border-double border-vintage-accent rounded-lg text-center max-w-xs">
+                    <h4 class="font-title text-xl mb-6">Notre communauté</h4>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="stats-item">
+                            <div class="font-heading text-4xl counter-value" data-count="723">0</div>
+                            <p class="font-body text-vintage-muted">Abonnés</p>
+                        </div>
+                        <div class="stats-item">
+                            <div class="font-heading text-4xl counter-value" data-count="42">0</div>
+                            <p class="font-body text-vintage-muted">Articles</p>
+                        </div>
+                        <div class="stats-item">
+                            <div class="font-heading text-4xl counter-value" data-count="156">0</div>
+                            <p class="font-body text-vintage-muted">Témoignages</p>
+                        </div>
+                        <div class="stats-item">
+                            <div class="font-heading text-4xl counter-value" data-count="14">0</div>
+                            <p class="font-body text-vintage-muted">Provinces</p>
+                        </div>
+                    </div>
+                    
+                    <p class="mt-6 text-sm font-body">Rejoignez notre combat pour une circulation juste et sans tracasseries</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
     </main>
 
     <!-- === FOOTER === -->
