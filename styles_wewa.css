@@ -235,9 +235,6 @@ img, svg {
 
 /* Amélioration de la polaroid sur grand écran */
 .polaroid {
-    width: 100%;
-    max-width: 450px;
-    margin: 0 auto;
     background: white;
     padding: 1rem;
     box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,0.2);
