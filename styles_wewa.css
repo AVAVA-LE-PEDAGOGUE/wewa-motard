@@ -104,6 +104,50 @@ img, svg {
     }
 }
 
+
+/* Section Abonnement & Compteurs */
+.stats-container {
+    background-color: var(--color-paper);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.stats-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.stats-item {
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.stats-item:hover {
+    transform: scale(1.05);
+}
+
+.counter-value {
+    color: var(--color-accent);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Animation pour les compteurs */
+@keyframes count-up {
+    from {
+        opacity: 0.5;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.counting {
+    animation: count-up 0.5s forwards;
+}
+    
  /* Conteneur style vintage et Assurer la lisibilité sur tous les écrans avec max-widht et overflox: hidden */   
 .vintage-container {
     border: 8px double var(--color-muted);
